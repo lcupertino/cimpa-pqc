@@ -1,35 +1,28 @@
-# Notes and references of the 2026 Santiago CIMPA School on post-quantum cryptography
+# 2026 Santiago CIMPA School on post-quantum cryptography
+**Problem Sheet Solutions and Notes on code-, isogeny-, lattice-, multivariate-, and MPCitH-based cryptography.**
 
-> Notes on code-, isogeny-, lattice-, multivariate-, and MPCitH-based cryptography.
-> Lucas Cardoso, 2026.
+## Table of contents
+- [Code-based cryptography](#code-based-cryptography)
+- [Isogeny-based cryptography](#isogeny-based-cryptography)
+- [Lattice-based cryptography](#lattice-based-cryptography)
+- [MPCitH-based cryptography](#mpcith-based-cryptography)
+- [Multivariate-based cryptography](#multivariate-based-cryptography)
 
-I used the following books, chapter, and others as a resource for studying each
-of the topics.
+---
 
-> Code-based
+## Code-based cryptography
+**Instructors: Claudio Qureshi**
 
-I read the
+## Isogeny-based cryptography
+**Instructors:**
 
-- Instructors: Claudio Qureshi
+## Lattice-based cryptography
+**Instructors: Fernando Virdia**
 
-> Isogeny-based
+***Resources***
+- ["An Introduction to Mathematical Cryptography" by Jeffrey Hoffstein, Jill Pipher, and Joseph H. Silvermann.](https://link.springer.com/book/10.1007/978-1-4939-1711-2)
 
-I read
+## MPCitH-based cryptography
 
-- Instructors:
-
-> Lattice-based
-
-I read "An Introduction to Mathematical Cryptography" by Jeffrey Hoffstein,
-Jill Pipher, and Joseph H. Silvermann.
-One recommended book is "The LLL Algorithm".
-
-- Instructors: Fernando Virdia and
-
-> MPCitH-based cryptography
-
-I
-
-> Multivariate-based cryptography
-
-- Instructors: Sofía Celí and
+## Multivariate-based cryptography
+**Instructors: Sofía Celí**
