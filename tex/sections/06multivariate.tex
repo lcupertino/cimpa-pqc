@@ -1,1 +1,48 @@
 \section{Multivariate-based cryptography} \label{sec: multivariate}
+
+
+\subsection{Problem Set 2}
+
+\begin{exercise}
+
+    Prove that the polar form is bilinear and symmetric in the following cases:
+    \begin{itemize}
+    
+      \item $\mathcal{F}$ is quadratic and homogeneous.
+
+      \item $\mathcal{F}$ is quadratic and inhomogeneous.
+
+      \item In the homogeneous case, if $M$ is the symmetric matrix such that 
+        $\mathcal{F}(\vec{x}) = \vec{x}^{\top} \vec{M} \vec{x}$,
+        show that the polar form is $\mathcal{G}(\vec{x}, \vec{y}) = \vec{x}^{\top} \vec{M} \vec{y}$.
+
+    \end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+
+  Write $\mathcal{F}(x) = \vec{x}^{\top}\vec{M}\vec{x}$.
+  From the definition of polar form, we have $\mathcal{G}(\vec{x}, \vec{y}) = \mathcal{F}(\vec{x} + \vec{y}) - \mathcal{F}(\vec{x}) - \mathcal{F}(\vec{y})$.
+  Substituting $\vec{x}$ by $\alpha \vec{x}$ 
+
+  for $\alpha \in \mathbb{F}_{q}$, we have:\[
+    \mathcal{G}(\alpha\vec{x}, \vec{y}) = \mathcal{F}(\alpha\vec{x} + \vec{y}) - \mathcal{F}(\alpha\vec{x})- \mathcal{F}(\vec{y})
+  \]
+  For item b), write $\mathcal{F}(x) = \vec{x}^{\top}\vec{M}\vec{x} + f^{\top}\vec{x} + \vec{c}$.
+\end{solution}
+
+
+\begin{solution}
+
+  We have that \[
+    \binom{2q}{q+2} = \dfrac{(2q)!}{(q+2)!(q-2)!} \approx \sqrt{\dfrac{2q}{\pi\left(q^{2} - 4\right)}} \dfrac{\left(2q\right)^{2q}}{e^{2q}}\dfrac{e^{q+2}e^{q-2}}{\left(q+2\right)^{q+2}\left(q-2\right)^{q-2}}
+  \]
+
+  The probability of finding $q + 2$ valid transcripts out of $2q$ transcripts in total (because the challenge space is $\mathcal{CH} = \mathbb{F}_{q}\times\{0,1\}$) 
+  is given by \[
+    \mathrm{Pr}[x = q+2] = \binom{2q}{q+2}p^{q+2}\left(1-p\right)^{2q - (q+2)}
+  \]
+  where $p = \dfrac{1}{2} + \dfrac{1}{2q} + \varepsilon$
+
+\end{solution}
