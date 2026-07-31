@@ -1,1 +1,71 @@
 \section{Lattice-based cryptography} \label{sec: lattices}
+The sessions on lattice-based cryptography was conducted by professor Fernando Virdia and by professor Nicolas Thériault, respectively. The first session was focused on a general overview of the hard problems from Lattice Theory (CVP, SVP, Search LWE, Decision LWE, and others), worst-case to average-case reduction, and cryptanalitic results. The second session focused on the formalization of MLWE, RLWE, ML-DSA, and fully homomorphic encryption.
+
+Problem sets 1 and 2 correspond to the first part of the course, while problem sets 3 and 4 corresponds to the latter part.
+
+\subsection{Problem Set 3}\label{subsec: lat-ps3}
+\begin{exercise}[RLWE vs. LWE]
+  Let $\mathcal{R}_{q} = \mathbb{Z}_{q}[x]/f(x)$ with $q = 101$ and $f(x) = x^{5} - 1$. 
+
+    \begin{itemize}
+      \item Construct the system $\vec{b} = \vec{A}\cdot\vec{s} + \vec{e}$ associated to \[
+  a(x) = 83x^{4} + 32x^{3} + 71x^{2} + 54x + 9
+  \]
+  for the polynomials $s(x) = s_{0} + s_{1}x + s_{2}x^{2} + s_{3}x^{3} + s_{4}x^{4}$ and $e(x) = e_{0} + e_{1}x + e_{2}x^{2} + e_{3}x^{3} + e_{4}x^{4}$.
+      \item Consider the same problem, but with $f(x) = x^{5} + 3x^{4} + x^{2} + 7$.
+      \item Consider the same problem (back to $f(x) = x^{5} - 1$), but with
+      \[
+      a(x) = 31x^{4} + 49x^{3} + 16x^{2} + 8x + 1
+      \]
+
+    \end{itemize}
+\end{exercise}
+
+
+
+\begin{exercise}[Growth factor]
+  For a polynomial $f(x)$ of degree $d$, we can define the growth factor $\tau$ as \[
+    \tau = \sup\left\{\dfrac{\max{|c_{i}|}}{\max{|a_{i}|}\cdot \max{|b_{i}|}}\right\}
+\]
+where \[
+  a(x) = \displaystyle\sum_{0 \le i < d}a_{i}x^{i},\, b(x) = \displaystyle\sum_{0 \le i < d}b_{i} x^{i},\, \text{and}\, c(x) = \displaystyle\sum_{0 \le i < d}c_{i}x^{i} \equiv a(x) \cdot b(x) \bmod{f(x)}.\]
+In the following, assume that $\alpha$ is relatively small.
+
+\begin{itemize}
+  \item Show that both $f(x) = x^{d} - 1$ and $f(x) = x^{d} + 1$ have growth factor $\tau = 1$.
+  \item Show that both $f(x) = x^{d} - \alpha$ has growth factor $\tau = |\alpha|$.
+  \item Show that both $f(x) = x^{d} - x - \alpha$ and $f(x) = x^{d} + x - \alpha$ have growth factor $\tau = |\alpha| + 1$.
+  \item What is the growth factor $f(x) = x^{d} - \alpha x + 1$?
+\end{itemize}
+
+\end{exercise}
+
+\begin{solution}
+  
+\end{solution}
+
+\begin{exercise}[Bounding the noise]
+  Let $\mathcal{R}_{q} = \mathbb{Z}_{q}[x]/f(x)$ with $f(x)$ a polynomial of degree $d$ and growth factor $\tau$.
+  Let $\mathcal{M}$ be a $n$--dimensional module over $\mathcal{R}_{q}$.
+  Suppose that all polynomial entries in $\mathcal{R}_{q}$ have coefficients bounded by $b$. Show that all coefficients of $c$ are bounded by \[
+  b + 2\tau n d b^{2}
+  \]
+\end{exercise}
+
+\begin{exercise}[Baby ML-KEM]
+  We define a small ML-KEM setting. Let $q = 1009$, $f(x) = x^{4} - 1$, $d = 1$, $K = 500$,\[
+    \mathbf{PK}_{1} = \mathbf{A} = 798x^{3} + 141x^{2} + 597x + 894
+    \]
+    and assume all ``small'' coefficients are in $\{0,1,2,3,4\}$.
+    \begin{itemize}
+      \item Show that $\mathbf{pk}_{0} = 817x^{3} + 631x^{2} + 765x + 81$ corresponds to a possible public key for $\mathbf{r} = 3x^{3} + x^{2} + 4x$.
+      \item Obtain the message encrypted as \[
+      \begin{cases}
+        \mathbf{ct}_{0} = 174x^{3} + 365x^{2} + 212x + 212\\ 
+        \mathbf{ct}_{1} = 718x^{3} + 810x^{2} + 22x + 150
+      \end{cases}
+      \]
+
+      \item Can you tell which temporary secret $\mathbf{s}$ was used?
+    \end{itemize}
+\end{exercise}
